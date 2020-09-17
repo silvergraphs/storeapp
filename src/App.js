@@ -1,25 +1,76 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createMedia } from "@artsy/fresnel";
+import React from "react";
+import { Container, Divider, Header, Icon, Menu } from "semantic-ui-react";
+
+/* Importing components */
+import UserCp from "./components/UserCp";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+/* React Router */
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
+
+import "./App.css";
+import Home from "./routes/Home";
+import Apps from "./routes/Apps";
+import Categories from "./routes/Categories";
+
+const { MediaContextProvider, Media } = createMedia({
+  breakpoints: {
+    mobile: 0,
+    tablet: 768,
+    computer: 1024,
+  },
+});
 
 function App() {
+  const fixed = false;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container>
+        {/* Page Header */}
+        <Container style={{ padding: "3.5em 0em 1em 0em" }}>
+          <Header as="h2" icon inverted textAlign="center">
+            <Icon name="google play" />
+            Store App
+            <Header.Subheader>
+              This application tries to imitate an Application Store, showing a
+              list of applications and categories, where you can register as a
+              user or developer.
+            </Header.Subheader>
+          </Header>
+
+          <Menu
+            fixed={fixed ? "top" : null}
+            inverted={!fixed}
+            pointing={!fixed}
+            secondary={!fixed}
+            size="large"
+          >
+            <NavBar></NavBar>
+            <UserCp></UserCp>
+          </Menu>
+          <Divider />
+        </Container>
+
+        {/* React Router Dynamic Content */}
+        <Switch>
+          <Route path="/" exact render={() => <Home />} />
+
+          <Route path="/apps" exact render={() => <Apps />} />
+
+          <Route path="/categories" exact render={() => <Categories />} />
+        </Switch>
+
+        <Footer></Footer>
+      </Container>
+    </Router>
   );
 }
 
