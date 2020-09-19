@@ -6,15 +6,10 @@ import { Container, Divider, Header, Icon, Menu } from "semantic-ui-react";
 import UserCp from "./components/UserCp";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Error from "./components/Error";
 
 /* React Router */
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import Home from "./routes/Home";
@@ -72,6 +67,9 @@ function App() {
           <Route path="/categories" exact render={() => <Categories />} />
 
           <Route path="/categories/:id" exact render={() => <Categories />} />
+
+          {/* Error 404 */}
+          <Route exact render={() => <Error />} />
         </Switch>
 
         <Footer></Footer>
