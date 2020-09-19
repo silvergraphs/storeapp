@@ -1,43 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Menu } from "semantic-ui-react";
 
 /* React Router */
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
-export default function NavBar(props) {
-  const [activeItem, setActiveItem] = React.useState(window.location.pathname);
+export default function NavBar() {
+  const location = useLocation();
+  const [activeItem, setActiveItem] = React.useState(location.pathname);
 
   return (
     <Container>
       <Menu.Item
         as={Link}
-        to="/"
+        to="/home"
         name="Home"
-        active={activeItem === "/"}
-        onClick={() => {
-          setActiveItem("/");
-          console.log(activeItem);
-        }}
+        active={activeItem === "/" || activeItem === "/home"}
+        onClick={() => setActiveItem("/home")}
       />
       <Menu.Item
-        as={Link}
+        as={NavLink}
         to="/apps"
         name="Applications"
         active={activeItem === "/apps"}
-        onClick={() => {
-          setActiveItem("/apps");
-          console.log(activeItem);
-        }}
+        onClick={() => setActiveItem("/apps")}
       />
       <Menu.Item
-        as={Link}
+        as={NavLink}
         to="/categories"
         name="Categories"
         active={activeItem === "/categories"}
-        onClick={() => {
-          setActiveItem("/categories");
-          console.log(activeItem);
-        }}
+        onClick={() => setActiveItem("/categories")}
       />
     </Container>
   );

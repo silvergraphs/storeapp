@@ -9,6 +9,8 @@ import {
   Segment,
 } from "semantic-ui-react";
 
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <Container>
@@ -20,8 +22,12 @@ export default function Footer() {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Store" />
                 <List link inverted>
-                  <List.Item as="a">Applications</List.Item>
-                  <List.Item as="a">Categories</List.Item>
+                  <List.Item as="a" href="/apps">
+                    Applications
+                  </List.Item>
+                  <List.Item as="a" href="/categories">
+                    Categories
+                  </List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>

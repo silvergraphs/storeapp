@@ -63,9 +63,15 @@ function App() {
         <Switch>
           <Route path="/" exact render={() => <Home />} />
 
+          <Route path="/home" exact render={() => <Home />} />
+
           <Route path="/apps" exact render={() => <Apps />} />
 
+          <Route path="/apps/:id" exact render={() => <Apps />} />
+
           <Route path="/categories" exact render={() => <Categories />} />
+
+          <Route path="/categories/:id" exact render={() => <Categories />} />
         </Switch>
 
         <Footer></Footer>
