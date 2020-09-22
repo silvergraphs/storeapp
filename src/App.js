@@ -1,10 +1,9 @@
-import { createMedia } from "@artsy/fresnel";
 import React from "react";
 import { Container, Divider, Header, Icon, Menu } from "semantic-ui-react";
 
 /* Importing components */
-import UserCp from "./components/UserCp";
-import NavBar from "./components/NavBar";
+import UserCp from "./components/NavBar/UserCp";
+import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 
@@ -15,14 +14,6 @@ import "./App.css";
 import Home from "./routes/Home";
 import Apps from "./routes/Apps";
 import Categories from "./routes/Categories";
-
-const { MediaContextProvider, Media } = createMedia({
-  breakpoints: {
-    mobile: 0,
-    tablet: 768,
-    computer: 1024,
-  },
-});
 
 function App() {
   const fixed = false;
@@ -40,13 +31,13 @@ function App() {
               user or developer.
             </Header.Subheader>
           </Header>
-
           <Menu
             fixed={fixed ? "top" : null}
             inverted={!fixed}
             pointing={!fixed}
             secondary={!fixed}
             size="large"
+            stackable
           >
             <NavBar></NavBar>
             <UserCp></UserCp>

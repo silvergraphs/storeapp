@@ -9,7 +9,7 @@ export default function Error() {
         Error 404
       </Header>
       <Header as="h3" icon inverted textAlign="center">
-        Not found
+        Sorry, the page you visited does not exist.
         <Header as="h3" icon inverted textAlign="center">
           <Button as="a" href="/home" basic inverted>
             Go to Home

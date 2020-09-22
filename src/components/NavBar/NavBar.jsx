@@ -10,6 +10,7 @@ export default function NavBar() {
 
   return (
     <Container>
+      {/*  <Menu stackable inverted style={{ backgroundColor: "#f0f8ff00" }}> */}
       <Menu.Item
         as={Link}
         to="/home"
@@ -31,6 +32,7 @@ export default function NavBar() {
         active={activeItem === "/categories"}
         onClick={() => setActiveItem("/categories")}
       />
+      {/*    </Menu> */}
     </Container>
   );
 }
