@@ -32,7 +32,6 @@ function App() {
             </Header.Subheader>
           </Header>
           <Menu
-            fixed={fixed ? "top" : null}
             inverted={!fixed}
             pointing={!fixed}
             secondary={!fixed}

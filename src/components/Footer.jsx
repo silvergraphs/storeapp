@@ -7,15 +7,16 @@ import {
   Icon,
   List,
   Segment,
+  Image,
 } from "semantic-ui-react";
 
 export default function Footer() {
   return (
     <Container>
       <Divider style={{ padding: "3em 0em" }} />
-      <Segment vertical>
+      <Segment vertical style={{ paddingBottom: "3em" }}>
         <Container>
-          <Grid divided inverted stackable>
+          <Grid divided inverted stackable textAlign="center">
             <Grid.Row>
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Store" />
@@ -45,17 +46,32 @@ export default function Footer() {
                   by Bruno Caruso
                 </p>
 
-                <p className="footerText">
-                  <a
-                    rel="license"
-                    href="http://creativecommons.org/licenses/by-sa/4.0/"
-                  >
-                    <img
-                      alt="Creative Commons License"
+                <Grid container columns={3} doubling stackable centered>
+                  <Grid.Column width={3}>
+                    <Image
+                      size="tiny"
                       src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+                      centered
                     />
-                  </a>
-                </p>
+                  </Grid.Column>
+                  <Grid.Column width={3}>
+                    <Image size="tiny" src="images/reactlogo.png" centered />
+                  </Grid.Column>
+                  <Grid.Column width={3}>
+                    <Image size="small" src="images/expresslogo.png" centered />
+                  </Grid.Column>
+                </Grid>
+
+                {/*                 <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                >
+                  <img
+                    alt="Creative Commons License"
+                    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+                  />
+
+                </a> */}
               </Grid.Column>
             </Grid.Row>
           </Grid>
