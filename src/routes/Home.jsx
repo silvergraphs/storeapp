@@ -1,10 +1,10 @@
 import React from "react";
-import { Grid, Header, Transition } from "semantic-ui-react";
+import { Grid, Header, Transition, Container } from "semantic-ui-react";
 
 export default function Home() {
   return (
     <Transition transitionOnMount={true} animation="fade up" duration={175}>
-      <div>
+      <Container style={{ paddingTop: "1.3em" }}>
         <Header as="h2" inverted textAlign="center">
           Recent Apps
         </Header>
@@ -87,7 +87,7 @@ export default function Home() {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </div>
+      </Container>
     </Transition>
   );
 }

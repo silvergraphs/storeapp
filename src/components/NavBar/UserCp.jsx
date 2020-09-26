@@ -1,6 +1,13 @@
 import React from "react";
 import {} from "semantic-ui-react";
-import { Button, Container, Menu, Modal, Transition } from "semantic-ui-react";
+import {
+  Button,
+  Container,
+  Menu,
+  Modal,
+  Transition,
+  Icon,
+} from "semantic-ui-react";
 
 import Login from "./Login";
 import Register from "./Register";
@@ -28,7 +35,7 @@ export default function UserCp() {
 
   return (
     <Container>
-      <Menu.Item position="right" style={{ marginTop: "20px" }}>
+      <Menu.Item position="right">
         <Button
           as="a"
           inverted={!fixed}

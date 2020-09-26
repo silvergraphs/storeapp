@@ -38,6 +38,7 @@ function App() {
             secondary={!fixed}
             size="large"
             stackable
+            style={{ marginTop: "20px" }}
           >
             <NavBar></NavBar>
             {/* <Logg></Logg> */}

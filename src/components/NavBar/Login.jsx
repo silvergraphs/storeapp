@@ -15,6 +15,7 @@ export default function Login() {
         iconPosition="left"
         label="Password"
         type="password"
+        placeholder="Password"
       />
 
       <Button primary fluid size="large">

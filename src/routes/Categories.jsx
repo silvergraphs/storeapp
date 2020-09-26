@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Grid, Transition } from "semantic-ui-react";
+import { Header, Grid, Transition, Container } from "semantic-ui-react";
 import { useParams } from "react-router-dom";
 
 export default function Categories() {
@@ -8,17 +8,17 @@ export default function Categories() {
   if (id) {
     return (
       <Transition transitionOnMount={true} animation="fade up" duration={175}>
-        <div>
+        <Container style={{ paddingTop: "1.3em" }}>
           <Header as="h2" inverted textAlign="center">
             Category ID {id}
           </Header>
-        </div>
+        </Container>
       </Transition>
     );
   } else {
     return (
       <Transition transitionOnMount={true} animation="fade up" duration={175}>
-        <div>
+        <Container style={{ paddingTop: "1.3em" }}>
           <Header as="h2" inverted textAlign="center">
             All Categories
           </Header>
@@ -75,7 +75,7 @@ export default function Categories() {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </div>
+        </Container>
       </Transition>
     );
   }
