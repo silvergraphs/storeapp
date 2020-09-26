@@ -55,10 +55,14 @@ export default function Footer() {
                     />
                   </Grid.Column>
                   <Grid.Column width={3}>
-                    <Image size="tiny" src="images/reactlogo.png" centered />
+                    <Image size="tiny" src="/images/reactlogo.png" centered />
                   </Grid.Column>
                   <Grid.Column width={3}>
-                    <Image size="small" src="images/expresslogo.png" centered />
+                    <Image
+                      size="small"
+                      src="/images/expresslogo.png"
+                      centered
+                    />
                   </Grid.Column>
                 </Grid>
 

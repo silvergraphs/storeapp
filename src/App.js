@@ -6,6 +6,7 @@ import UserCp from "./components/NavBar/UserCp";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
+import Logg from "./components/Logg";
 
 /* React Router */
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -39,6 +40,7 @@ function App() {
             stackable
           >
             <NavBar></NavBar>
+            {/* <Logg></Logg> */}
             <UserCp></UserCp>
           </Menu>
           <Divider />

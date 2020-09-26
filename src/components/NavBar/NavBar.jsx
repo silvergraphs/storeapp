@@ -8,6 +8,10 @@ export default function NavBar() {
   const location = useLocation();
   const [activeItem, setActiveItem] = React.useState(location.pathname);
 
+  React.useEffect(() => {
+    setActiveItem(location.pathname);
+  }, [location.pathname]);
+
   return (
     <Container>
       <Menu.Item
@@ -15,21 +19,18 @@ export default function NavBar() {
         to="/home"
         name="Home"
         active={activeItem === "/" || activeItem === "/home"}
-        onClick={() => setActiveItem("/home")}
       />
       <Menu.Item
         as={NavLink}
         to="/apps"
         name="Applications"
         active={activeItem === "/apps"}
-        onClick={() => setActiveItem("/apps")}
       />
       <Menu.Item
         as={NavLink}
         to="/categories"
         name="Categories"
         active={activeItem === "/categories"}
-        onClick={() => setActiveItem("/categories")}
       />
       {/*    </Menu> */}
     </Container>

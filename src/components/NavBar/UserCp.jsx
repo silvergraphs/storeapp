@@ -1,6 +1,6 @@
 import React from "react";
 import {} from "semantic-ui-react";
-import { Button, Container, Menu, Modal } from "semantic-ui-react";
+import { Button, Container, Menu, Modal, Transition } from "semantic-ui-react";
 
 import Login from "./Login";
 import Register from "./Register";
@@ -62,20 +62,30 @@ export default function UserCp() {
       </Menu.Item>
 
       {/* Modal */}
+
       <div>
-        <Modal
-          dimmer={dimmer}
-          open={open}
-          onClose={() => dispatch({ type: "CLOSE_MODAL" })}
-          size="tiny"
-        >
-          <Modal.Header>
-            {state.status === "login" ? "Log In" : "Register"}
-          </Modal.Header>
-          <Modal.Content>
-            {state.status === "login" ? <Login></Login> : <Register></Register>}
-          </Modal.Content>
-        </Modal>
+        <Transition.Group animation="fade" duration={257}>
+          {open && (
+            <Modal
+              dimmer={dimmer}
+              open={open}
+              onClose={() => dispatch({ type: "CLOSE_MODAL" })}
+              size="tiny"
+            >
+              <Modal.Header>
+                {state.status === "login" ? "Log In" : "Register"}
+              </Modal.Header>
+
+              <Modal.Content>
+                {state.status === "login" ? (
+                  <Login></Login>
+                ) : (
+                  <Register></Register>
+                )}
+              </Modal.Content>
+            </Modal>
+          )}
+        </Transition.Group>
       </div>
     </Container>
   );
