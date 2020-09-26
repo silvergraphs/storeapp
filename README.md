@@ -8,7 +8,7 @@ As developer you can see every app and your uploaded/developed apps.
 
 This app is created for learn purposes, i learn while developing 📘
 
-![StoreApp Frontend (React)](https://i.imgur.com/Tud2BaP.png)
+![StoreApp Frontend (React)](https://i.imgur.com/8HVNDyH.png)
 
 ## Contributing 👍
 
