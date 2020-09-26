@@ -10,6 +10,8 @@ import {
   Image,
 } from "semantic-ui-react";
 
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <Container>
@@ -21,10 +23,10 @@ export default function Footer() {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Store" />
                 <List link inverted>
-                  <List.Item as="a" href="/apps">
+                  <List.Item as={Link} to="/apps">
                     Applications
                   </List.Item>
-                  <List.Item as="a" href="/categories">
+                  <List.Item as={Link} to="/categories">
                     Categories
                   </List.Item>
                 </List>
@@ -32,9 +34,21 @@ export default function Footer() {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Useful Links" />
                 <List link inverted>
-                  <List.Item as="a">GitHub Profile</List.Item>
-                  <List.Item as="a">GitHub Repo</List.Item>
-                  <List.Item as="a">LinkedIn</List.Item>
+                  <List.Item as="a" href="https://github.com/silvergraphs">
+                    GitHub Profile
+                  </List.Item>
+                  <List.Item
+                    as="a"
+                    href="https://github.com/silvergraphs/storeapp"
+                  >
+                    GitHub Repo
+                  </List.Item>
+                  <List.Item
+                    as="a"
+                    href="https://www.linkedin.com/in/brunocarusok/"
+                  >
+                    LinkedIn
+                  </List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={10}>
