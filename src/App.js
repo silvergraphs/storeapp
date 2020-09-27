@@ -66,7 +66,15 @@ function App() {
           />
 
           {/* Error 404 */}
-          <Route exact render={() => <Error />} />
+          <Route
+            exact
+            render={() => (
+              <Error
+                errorCode="404"
+                errorMsg="Sorry, the page you visited does not exist."
+              />
+            )}
+          />
         </Switch>
 
         <Footer></Footer>
