@@ -15,6 +15,36 @@ p > span {
   opacity: 0.4;
   text-align: center;
 }
+
+.gridContent {
+  align-content: center;
+  background-color: #416a8e73;
+  color: #fff;
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 6em;
+}
+
+.gridLink {
+  color: #ffffff;
+  text-decoration: none;
+}
+.gridLink:hover {
+  color: #ffffffb8;
+  text-decoration: none;
+}
+
+.appContent {
+  align-content: center;
+  background-color: #416a8e00;
+  color: #fff;
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0em;
+}
+
 .footerText {
   align-content: center;
   background-color: transparent;

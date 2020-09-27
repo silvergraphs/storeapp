@@ -49,17 +49,21 @@ function App() {
 
         {/* React Router Dynamic Content */}
         <Switch>
-          <Route path="/" exact render={() => <Home />} />
+          <Route path="/" exact component={() => <Home />} />
 
-          <Route path="/home" exact render={() => <Home />} />
+          <Route path="/home" exact component={() => <Home />} />
 
-          <Route path="/apps" exact render={() => <Apps />} />
+          <Route path="/apps" exact component={() => <Apps />} />
 
-          <Route path="/apps/:id" exact render={() => <Apps />} />
+          <Route path="/apps/:id" exact component={() => <Apps />} />
 
-          <Route path="/categories" exact render={() => <Categories />} />
+          <Route path="/categories" exact component={() => <Categories />} />
 
-          <Route path="/categories/:id" exact render={() => <Categories />} />
+          <Route
+            path="/categories/:id"
+            exact
+            component={() => <Categories />}
+          />
 
           {/* Error 404 */}
           <Route exact render={() => <Error />} />
