@@ -33,10 +33,8 @@ export default function Apps() {
       <Transition transitionOnMount={true} animation="fade down" duration={200}>
         <Container style={{ paddingTop: "1.3em" }} textAlign="center">
           <Header as="h2" inverted textAlign="center">
-            <Image
-              circular
-              src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
-            />{" "}
+            {apps.logo ? <Image circular src={apps.logo} /> : <></>}
+
             {apps.name}
           </Header>
 
@@ -45,7 +43,7 @@ export default function Apps() {
           </Header>
           <span style={{ color: "#fff", alignText: "center" }}>
             <Icon name="dollar"></Icon>
-            {apps.price == 0 ? <>Free</> : <>{apps.price} USD</>}
+            {apps.price === 0 ? <>Free</> : <>{apps.price} USD</>}
           </span>
 
           <Header sub inverted textAlign="center">
@@ -73,7 +71,7 @@ export default function Apps() {
               style={{ verticalAlign: "unset" }}
             >
               <Button.Content hidden>
-                {apps.price == 0 ? <>Free</> : <>{apps.price} USD</>}
+                {apps.price === 0 ? <>Free</> : <>{apps.price} USD</>}
               </Button.Content>
               <Button.Content visible>
                 <Icon name="shop"></Icon>Buy
@@ -111,12 +109,27 @@ export default function Apps() {
             All Apps
           </Header>
 
-          <Grid>
+          <Grid textAlign="center">
             <Grid.Row columns={4}>
               {apps.map((app, index) => (
                 <Grid.Column key={index} style={{ paddingBottom: "2em" }}>
                   <p className="gridContent">
-                    <Link to={"/apps/" + app.id} className="gridLink">
+                    <Link
+                      to={"/apps/" + app.id}
+                      className="gridLink"
+                      style={{ margin: "1em" }}
+                    >
+                      {app.logo ? (
+                        <Image
+                          circular
+                          src={app.logo}
+                          size="tiny"
+                          style={{ marginBottom: "1em" }}
+                        />
+                      ) : (
+                        <></>
+                      )}
+
                       {app.name}
                     </Link>
                   </p>

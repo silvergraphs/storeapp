@@ -23,7 +23,7 @@ p > span {
   display: grid;
   flex-direction: column;
   justify-content: center;
-  min-height: 6em;
+  min-height: 10em;
 }
 
 .gridLink {
@@ -32,7 +32,6 @@ p > span {
 }
 .gridLink:hover {
   color: #ffffffb8;
-  text-decoration: none;
 }
 
 .appContent {
